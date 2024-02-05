@@ -5,11 +5,11 @@
 }
 
 .wrapper {
+  position: relative;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  // filter: contrast(20);
   background: white;
 
   .circle {
@@ -18,6 +18,39 @@
     background-color: black;
     border-radius: 50%;
     display: inline-block;
-    // filter: blur(15px);
+
+
+  }
+
+  &.animation {
+    .circle {
+      position: absolute;
+
+      &:nth-of-type(2) {
+        animation: translate 5s infinite linear;
+      }
+
+      @keyframes translate {
+        0% {
+          transform: translateX(-400px);
+        }
+
+        25% {
+          transform: translateX(0px);
+        }
+
+        50% {
+          transform: translateX(400px);
+        }
+
+        75% {
+          transform: translateX(0px);
+        }
+
+        100% {
+          transform: translateX(-400px);
+        }
+      }
+    }
   }
 }

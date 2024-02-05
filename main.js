@@ -8,7 +8,12 @@ const wrapper = document.querySelector(".wrapper");
 const filters = {
   blur: 0,
   contrast: 0,
+  animation: false,
 };
+
+function handleAddAnimation() {
+  wrapper.classList.toggle("animation");
+}
 
 gui
   .add(filters, "blur", 0, 50)
@@ -26,4 +31,11 @@ gui
   .name("contrast")
   .onChange((value) => {
     wrapper.style.filter = `contrast(${value})`;
+  });
+
+gui
+  .add(filters, "animation")
+  .name("animation")
+  .onChange((value) => {
+    handleAddAnimation();
   });

@@ -5,6 +5,7 @@
 }
 
 .wrapper {
+  position: relative;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -17,4 +18,27 @@
   background-color: black;
   border-radius: 50%;
   display: inline-block;
+}
+.wrapper.animation .circle {
+  position: absolute;
+}
+.wrapper.animation .circle:nth-of-type(2) {
+  animation: translate 5s infinite linear;
+}
+@keyframes translate {
+  0% {
+    transform: translateX(-400px);
+  }
+  25% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(400px);
+  }
+  75% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-400px);
+  }
 }/*# sourceMappingURL=style.css.map */
